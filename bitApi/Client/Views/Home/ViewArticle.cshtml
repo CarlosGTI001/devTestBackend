@@ -1,0 +1,26 @@
+﻿@model announcement
+
+@{
+    if (Model != null)
+        ViewData["title"] = Model.title;
+}
+
+
+
+<div class="text-center text-white">
+    <h1 class="display-4">@Model.title</h1>
+</div>
+<div class="container text-white mt-2">
+
+    <div class="border-bottom justify-content-end">
+        <p>
+            Date: @Model.date
+        </p>
+    </div>
+
+    @Html.Raw(Model.content)
+
+    <div class="border-top">
+        <a href="@Model.link" class="btn btn-primary" target="_blank">Visit blog...</a>
+    </div>
+</div>

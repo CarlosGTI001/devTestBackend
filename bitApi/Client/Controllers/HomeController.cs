@@ -17,17 +17,29 @@ namespace Client.Controllers
 
         public IActionResult Index(string s)
         {
-            if(s == null)
+            if (s == null)
             {
-                return View(_context.announcement.OrderByDescending(a=>a.date));
+                return View(_context.announcement.OrderByDescending(a => a.date));
             }
             else
             {
+                ViewBag.s = s;
                 return View(_context.announcement.Where(a => a.title.Contains(s) || a.content.Contains(s)).OrderByDescending(a => a.date));
             }
-            
         }
 
+        public IActionResult ViewArticle(int id)
+        {
+            var article = _context.announcement.Where(a => a.id == id).FirstOrDefault();
+            if (article != null)
+            {
+                return View(article);
+            }
+            else
+            {
+                return RedirectToAction("Index");
+            }
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

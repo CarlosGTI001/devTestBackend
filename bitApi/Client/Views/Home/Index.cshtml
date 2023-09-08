@@ -12,7 +12,7 @@
         <form method="get" asp-action="Index">
             <div class="input-group flex-nowrap justify-content-end">
                 <span class="input-group-text text-white bg-dark" id="addon-wrapping">Filter</span>
-                <input class="bg-black text-white" name="s" type="text" class="form-control" placeholder="Write here..." aria-label="filter" aria-describedby="addon-wrapping">
+                <input class="bg-black text-white" name="s" type="text" class="form-control" value='@ViewData["s"]' placeholder="Write here..." aria-label="filter" aria-describedby="addon-wrapping">
                 <input type="submit" value="Search" class="btn btn-outline-primary text-white" />
             </div>
         </form>
@@ -28,7 +28,8 @@
                             <div class="card-body">
                                 <h5 class="card-title">@Article.title</h5>
                                 <p class="card-text"> @Html.Raw(Article.content.Substring(0, Math.Min(110, Article.content.Length)))...</p>
-                                <a href="@Article.link" class="btn btn-primary" target="_blank">See more...</a>
+                                <a href="@Article.link" class="btn btn-primary" target="_blank">Visit blog...</a>
+                                <a asp-action="ViewArticle" asp-route-id="@Article.id"  class="btn btn-primary" target="_blank">Read more...</a>
                             </div>
                             <div class="card-footer">
                                 Release: @Article.date.ToString("F dd/mm/yyyy hh:mm tt")
