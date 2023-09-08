@@ -1,0 +1,43 @@
+﻿@model IEnumerable<announcement>;
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center text-white">
+    <h1 class="display-4">BITMex Announcements</h1>
+    <p></p>
+</div>
+<div class="container text-white pt-5">
+        <form method="get" asp-action="Index">
+            <div class="input-group flex-nowrap justify-content-end">
+                <span class="input-group-text text-white bg-dark" id="addon-wrapping">Filter</span>
+                <input class="bg-black text-white" name="s" type="text" class="form-control" placeholder="Write here..." aria-label="filter" aria-describedby="addon-wrapping">
+                <input type="submit" value="Search" class="btn btn-outline-primary text-white" />
+            </div>
+        </form>
+    <hr />
+    <div class="container text-center ">
+        <div class="row row-cols-3">
+            @if (Model != null)
+            {
+                @foreach (var Article in Model)
+                {
+                    <div class="col mt-4">
+                        <div class="card bg-black text-white">
+                            <div class="card-body">
+                                <h5 class="card-title">@Article.title</h5>
+                                <p class="card-text"> @Html.Raw(Article.content.Substring(0, Math.Min(110, Article.content.Length)))...</p>
+                                <a href="@Article.link" class="btn btn-primary" target="_blank">See more...</a>
+                            </div>
+                            <div class="card-footer">
+                                Release: @Article.date.ToString("F dd/mm/yyyy hh:mm tt")
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+
+</div>
