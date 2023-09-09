@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bitApi", "bitApi\bitApi.csproj", "{B355C321-54C8-4F04-BE5E-27B46900E7FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csproj", "{13B48476-B0BC-493A-9DEB-07B213078AD5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B355C321-54C8-4F04-BE5E-27B46900E7FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B355C321-54C8-4F04-BE5E-27B46900E7FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B355C321-54C8-4F04-BE5E-27B46900E7FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B355C321-54C8-4F04-BE5E-27B46900E7FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13B48476-B0BC-493A-9DEB-07B213078AD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13B48476-B0BC-493A-9DEB-07B213078AD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13B48476-B0BC-493A-9DEB-07B213078AD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13B48476-B0BC-493A-9DEB-07B213078AD5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {62CC3A89-97C9-4857-BA01-A9FBA8AB5C24}
+	EndGlobalSection
+EndGlobal
